@@ -1,4 +1,6 @@
 //activation function
+function sign(n)
+{if(n>=0)}
 var sign(var n)
 {
 if (n >= 0){

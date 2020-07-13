@@ -40,12 +40,6 @@ var cccccc;
 
 var ccccccc;
 
-var cccccccc=[
-[000,001,010],
-[011,100,101],
-[110,111,1000]  
-];
-
 var coin;
 
 var rt=0;
@@ -58,9 +52,8 @@ rCoin=0;
 
 var result01=[0,0,0,0,0,0]; 
 var result10=[0,0,0,0,0,0];
-var result0011=0;
-var result1100=0;
-var result1010=0;
+var result0011;
+var result1100;
 var text01;
 var text10;
 
@@ -71,6 +64,9 @@ function preload() {
   inconsolata = loadFont('AGENCYB.TTF');
 }
   
+
+timer = 9;
+
 
 var mx = 
     {
@@ -88,6 +84,19 @@ let pE = 0;
 let pM = 34;
 let wS = 34;
 let hS = 21;
+
+let l1 = 255;
+let l2 = 255;
+let l3 = 255;
+let l4 = 255;
+let l5 = 255;
+let l6 = 255;
+let l7 = 255;
+let l8 = 255;
+let l9 = 255;
+let l10 = 255;
+let l11 = 255;
+let l12 = 255;
 
 let e1=255;
 let e2=255;
@@ -109,30 +118,26 @@ let coinCountValue3=255;
 
 var io01=0,io02=0,io03=0,io04=0,io05=0,io06=0,io07=0,io08=0,io09=0,io10=0,io11=0,io12=0;
 
-let angInt=1;
+let angInt= 1;
 let angExt=1;
 
-timer = 8;
-timerTT=180;
+let=extFire=360;
+let=extEath=315;
+let=extLake=270;
+let=extSky=225;
+let=extWater=180;
+let=extMount=135;
+let=extThund=90;
+let=extWind=45; 
 
-
-let eFire=360;
-let eEarth=315;
-let eLake=270;
-let eSky=225;
-let eWater=180;
-let eMount=135;
-let eThund=90;
-let eWind=45; 
-
-let iSky=360;
-let iWind=315;
-let iWater=270;
-let iMount=225;
-let iEarth=180;
-let iThund=135;
-let iFire=90;
-let iLake=45;
+let=intSky=360;
+let=intWind=315;
+let=intWater=270;
+let=intMount=225;
+let=intEarth=180;
+let=intThund=135;
+let=intFire=90;
+let=intLake=45;
 
 mIO = [
   [45, 360,315],
@@ -170,14 +175,9 @@ mmm = [
 [iEarth,iWater,iMetal]
 ]
 
-let ss00=0;     
-let ss01=0;   
-let ss10=0;     
-let ss11=0; 
 
+result1010=0;
 
-var ii;
-//var i;
 //Perceptron p;
 
 function setup() {
@@ -216,28 +216,24 @@ function setup() {
  */ 
   
   
-  
-//  sPerceptron();
-  
-
   }//setup//////////////
 
 function draw()
 {
-if(click==6){timeT();} 
 
+//console.log(hexagrams[0][2]);
+  
+  
+//page01();
+//page02(); 
+//ccPerceptron();
   
 mouseBox();
   
+if(click==6){timeT();newPage();} 
+ 
   
-newPage();  
-
-timeTT(); 
-
   
-console.log(timer);
- //ccPerceptron(); 
-//dPerceptron();   
 }//draw
 
 
@@ -279,14 +275,9 @@ function mousePressed() {
   if (overBox) {
     locked = true;
     
-console.log(click);
-//console.log(angExt);
-//console.log(hexagrams[0][result0011],0,0);
-    
-    
+
     matrix6789();
- //   angIO();
-    timerTT=135;
+    angIO();
     
     fill(255, 255, 255);
   } else {
@@ -296,6 +287,7 @@ console.log(click);
   yOffset = mouseY - by;
 }
 //click//////////////////////////////////////////
+
 
 
 function mouseDragged() {
@@ -313,3 +305,56 @@ function mouseReleased() {
 
 
 
+function newPage()
+{
+
+//start new page   
+  
+  switch (timer) {
+    case 8:
+rDisc=0;
+rCoin=1; 
+      break;
+    case 7:
+rDisc=0;
+rCoin=0; 
+      break;
+    case 6:
+rDisc=1;
+rCoin=0; 
+      break;
+    case 5:
+rDisc=1;
+rCoin=1; 
+      break;
+    case 4:
+text('p5.js', -200, -200);  
+  let timet = millis();
+  rotateX(timet / 1000);
+  rotateZ(timet / 1234);   
+      break;
+    case 3:
+//font  
+textSize(16);
+text(hexagrams[0][result0011],0,0);
+      break;
+    case 2:
+
+push(); 
+textSize(16);
+text(hexagrams[0][result1100],0,0);
+pop(); 
+      
+     break;
+    case 1:
+textSize(36);
+text('recomeçar',0,0);      
+    break;
+    
+         break;
+    case 0:
+//page01();
+page02();     
+    break;
+
+}}

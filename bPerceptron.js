@@ -2,7 +2,7 @@
 Perceptron p;
 
 //Povar povars = new Array[8];
-var povars = new Array[8];
+var povars = new Array(8);
 
 
 
@@ -17,7 +17,7 @@ for (var i=0; i<povars.length; i++) {
 }
 
 
-var inputs = {-1,0,5};
+var inputs = [-1,0,5];
 var guess = p.guess(inputs);
 println(guess);
 }

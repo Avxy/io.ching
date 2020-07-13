@@ -7,9 +7,69 @@
   }
   if (timer == 0) {
     text("GAME OVER", width/2, height*0.7);
-} }//timer
+}}//timer
 
+  function timeTT()
+{
+ //timer  
+  if (frameCount % 1 == 0 && timerTT > 0 && timerTT < 180) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    timerTT ++;
+  }}
 
+function newPage()
+{
+
+//start new page   
+  
+  switch (timer) {
+    case 8:
+page01();
+//page02(); 
+rDisc=0;
+rCoin=0; 
+      break;
+    case 7:
+rDisc=1;
+rCoin=0; 
+      break;
+    case 6:
+textSize(36);
+text('recomeçar',0,0); 
+      break;
+    case 5:
+//page01();
+page02(); 
+      break;
+    case 4:
+text('p5.js', -200, -200);  
+  let timet = millis();
+  rotateX(timet / 1000);
+  rotateZ(timet / 1234);   
+      break;
+    case 3:
+//font  
+textSize(16);
+text(hexagrams[0][result0011],0,0);
+      break;
+    case 2:
+
+push(); 
+textSize(16);
+text(hexagrams[0][result1100],0,0);
+pop(); 
+      
+     break;
+    case 1:
+      
+    break;
+    
+         break;
+    case 0:
+//page01();
+page02();     
+    break;
+
+}}
 
 function matrix6789()
 {
@@ -41,10 +101,7 @@ ccc = random(cc);
       cccc = 9;
       break;
   }
- 
   
-if(click==6){click=0}      
-    
 switch (cccc) {
     case 6:
       ccccc = 0;
@@ -91,8 +148,8 @@ io09=ccccc;
 io12=cccccc;
       break;
       
-
-}   
+}
+  
     
 //show result in array  
 result01[click] = ccccc;
@@ -102,7 +159,7 @@ result0011 = result01.join("")
 result1100 = result10.join("") 
 result1010 = result0011+result1100; 
   
-text01 = (result1010); 
+//text01 = (result1010); 
 //var text0011 = split(text01);    
 //var text0011 = text01.join("");
   
@@ -113,52 +170,80 @@ text01 = (result1010);
 //text(text01,-300,-300);
 //pop();
 //text  
-  
-console.log(result1010);    
 
-  click++;
  
+//}
+//function angIO()
+//{
+  
+ 
+let a =str(result0011);
+
+let aa=int(a);
+ 
+let aaa=a.substring(0, 3); 
+let aaaa=a.substring(3, 6); 
+
+  
+  switch (aaa) {
+    case '000':
+angInt=iEarth;
+      break;
+    case '001':
+angInt=iMount;
+      break;
+    case '010':
+angInt=iWater;
+      break;
+    case '011':
+angInt=iWind;
+      break;
+    case '100':
+angInt=iThund;
+      break;
+    case '101':
+angInt=iFire;
+      break;  
+    case '110':
+angInt=iLake;
+      break; 
+    case '111':
+angInt=iSky;
+      break;  
 }
 
-function angIO()
-{
-
   
-  switch (result1010) {
-    case 000000000000:
-angInt=intSky;
-angExt=extFire;
+  switch (aaaa) {
+    case '000':
+angExt=eEarth;
       break;
-    case 100000000000:
-angInt=intLake;
-angExt=extWind;
+    case '001':
+angExt=eMount;
       break;
-    case 010000000000:
-angInt=intFire;
-angExt=extThund;
+    case '010':
+angExt=eWater;
       break;
-    case 001000000000:
-angInt=intThund;
-angExt=extMount;
+    case '011':
+angExt=eWind;
       break;
-    case 000100000000:
-angInt=intEarth;
-angExt=extWater;
+    case '100':
+angExt=eThund;
       break;
-    case 000010000000:
-angInt=intMount;
-angExt=extSky;
+    case '101':
+angExt=eFire;
       break;  
-    case 0000010000000:
-angInt=intWater;
-angExt=extLake;
+    case '110':
+angExt=eLake;
       break; 
-    case 0000001000000:
-angInt=intWind;
-angExt=extEath;
-      break;       
- 
-}}
+    case '111':
+angExt=eSky;
+      break;  
+}
+
+click++;
+
+if(click==7){click=0} 
+}
 
 
 function matrixM()

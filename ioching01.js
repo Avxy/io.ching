@@ -1,37 +1,33 @@
-
 function page01() {
   background(0,73,108);
     //fill(255);
-  
-  
+ 
+
+ 
   
   push();
   translate(0, 0, -34);
   noFill();
   noStroke();
+  
+//let a = 4;
+if (rDisc==1) {
+  rotateY((frameCount * -0.01));
+} else {
   rotateZ(sin(frameCount * -0.01));
-
-if(rDisc == 1.0)
-{
-  
-  let angular = 0.0;
-while (angular <= 2.0) {
-  angular = angular + 1;
-  rotateY(PI*0.2);
-  
 }
-}  
-  
-    
+ 
   texture(img1);
   circle(0,0,700);
   pop();  
 
+ 
   push();
   noStroke();
   //rotateZ(sin(frameCount * 0.01));
-  rotateZ(PI*(angInt/180));
+  rotateZ(PI*(angInt/timerTT));
   texture(img3);
+  smooth();
   circle(0,0,666);
   pop();
  
@@ -39,7 +35,7 @@ while (angular <= 2.0) {
   push();
   noStroke();
  // rotateZ(sin(frameCount * 0.005));
-  rotateZ(PI*(angExt/180));
+  rotateZ(PI*(angExt/timerTT));
   texture(img4);
   circle(0,0,666);
   pop();
@@ -47,17 +43,17 @@ while (angular <= 2.0) {
   
   push();
   noStroke();
-  rotateZ(sin(frameCount * 0.1));
+  rotateZ(sin(frameCount * 0.001));
   texture(img5);
-  circle(0,0,666);
+  circle(0,3,666);
   pop();
    
     
   push();
   noStroke();
-  rotateZ(frameCount * 0.005);
+  rotateZ(frameCount * 0.05);
   texture(img2);
-  circle(0,0,89);
+  circle(0,0,50);
   pop();
   
  
@@ -107,7 +103,7 @@ text('Medite\nPergunte\nClick(6 vezes)\nAnalise\nRecomeçe', -300, -300); pop();
 
 
   
-}//draw////////////////////////////////////////////
+}//page01////////////////////////////////////////////
   
 
 
